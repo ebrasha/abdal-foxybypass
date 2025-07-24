@@ -53,7 +53,7 @@ A powerful Firefox extension designed to bypass website restrictions and limitat
 ## 📖 Usage
 
 <div align="center">
-  <img src="scr.png" alt="Abdal Torrent Downloader Screenshot" width="600">
+    <img src="scr.png" alt="Abdal FoxyByPass">
 </div>
 
 ### Basic Usage

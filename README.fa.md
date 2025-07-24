@@ -54,7 +54,7 @@
 ## 📖 استفاده
 
 <div align="center">
-  <img src="scr.png" alt="Abdal Torrent Downloader Screenshot" width="600">
+  <img src="scr.png" alt="Abdal FoxyByPass">
 </div>
 
 

@@ -52,6 +52,10 @@ A powerful Firefox extension designed to bypass website restrictions and limitat
 
 ## 📖 Usage
 
+<div align="center">
+  <img src="scr.png" alt="Abdal Torrent Downloader Screenshot" width="600">
+</div>
+
 ### Basic Usage
 
 1. Install the extension following the installation instructions above

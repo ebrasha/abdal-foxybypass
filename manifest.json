@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "name": "Abdal FoxyByPass",
+  "version": "1.15.0",
+  "description": "A powerful Firefox extension to bypass website restrictions and limitations",
+  "author": "Ebrahim Shafiei (EbraSha)",
+  "homepage_url": "https://github.com/ebrasha",
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "<all_urls>"
+  ],
+  
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Abdal FoxyByPass",
+    "default_icon": "icons/icon.svg"
+  },
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png",
+    "128": "icons/icon128.png"
+  },
+  
+  "web_accessible_resources": [
+    "icons/*"
+  ]
+} 

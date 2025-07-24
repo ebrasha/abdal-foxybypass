@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdal FoxyByPass</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 400px;
+            min-height: 600px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            margin: 10px;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .toggle-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 8px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 5px;
+        }
+
+        .toggle-label {
+            font-size: 14px;
+            color: #333;
+            flex: 1;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 24px;
+            background: #ccc;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .toggle-switch.active {
+            background: #667eea;
+        }
+
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .toggle-switch.active::after {
+            transform: translateX(26px);
+        }
+
+        .site-list-section {
+            margin-top: 20px;
+        }
+
+        .mode-selector {
+            display: flex;
+            margin-bottom: 15px;
+            background: #f5f5f5;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .mode-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: #ddd;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background 0.3s;
+        }
+
+        .mode-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .site-input-group {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .site-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .add-btn {
+            padding: 8px 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        .add-btn:hover {
+            background: #5a6fd8;
+        }
+
+        .site-list {
+            max-height: 150px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+        }
+
+        .site-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 12px;
+        }
+
+        .site-item:last-child {
+            border-bottom: none;
+        }
+
+        .remove-btn {
+            background: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 3px 8px;
+            cursor: pointer;
+            font-size: 10px;
+        }
+
+        .remove-btn:hover {
+            background: #ff3742;
+        }
+
+        .status {
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .status.enabled {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.disabled {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .save-btn {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .save-btn:hover {
+            background: #5a6fd8;
+        }
+
+        .save-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .applying {
+            background: #28a745 !important;
+        }
+
+        .status-message {
+            text-align: center;
+            font-size: 11px;
+            color: #28a745;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Abdal FoxyByPass</h1>
+        <p>Bypass website restrictions and limitations</p>
+    </div>
+
+    <div class="container">
+        <div class="status" id="status">
+            <span id="statusText">Loading...</span>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Bypass Features</div>
+            
+            <div class="toggle-group">
+                <span class="toggle-label">Enable Right-Click</span>
+                <div class="toggle-switch" id="enableRightClick"></div>
+            </div>
+
+            <div class="toggle-group">
+                <span class="toggle-label">Enable Keyboard Shortcuts</span>
+                <div class="toggle-switch" id="enableKeyboardShortcuts"></div>
+            </div>
+
+            <div class="toggle-group">
+                <span class="toggle-label">Enable Drag & Drop</span>
+                <div class="toggle-switch" id="enableDragAndDrop"></div>
+            </div>
+
+            <div class="toggle-group">
+                <span class="toggle-label">Enable Text Selection</span>
+                <div class="toggle-switch" id="enableTextSelection"></div>
+            </div>
+
+            <div class="toggle-group">
+                <span class="toggle-label">Enable Image Right-Click</span>
+                <div class="toggle-switch" id="enableImageRightClick"></div>
+            </div>
+
+            <div class="toggle-group">
+                <span class="toggle-label">Remove Invisible Overlays</span>
+                <div class="toggle-switch" id="enableInvisibleOverlay"></div>
+            </div>
+
+            <div class="toggle-group">
+                <span class="toggle-label">Enable Drop Content</span>
+                <div class="toggle-switch" id="enableDropContent"></div>
+            </div>
+
+            <div class="toggle-group">
+                <span class="toggle-label">Enable Print Function</span>
+                <div class="toggle-switch" id="enablePrint"></div>
+            </div>
+
+            <div class="toggle-group">
+                <span class="toggle-label">Enable Screenshot</span>
+                <div class="toggle-switch" id="enableScreenshot"></div>
+            </div>
+        </div>
+
+        <div class="section site-list-section">
+            <div class="section-title">Site Management</div>
+            
+            <div class="mode-selector">
+                <button class="mode-btn" id="blacklistMode">Blacklist Mode</button>
+                <button class="mode-btn" id="whitelistMode">Whitelist Mode</button>
+            </div>
+
+            <div class="site-input-group">
+                <input type="text" class="site-input" id="siteInput" placeholder="Enter website domain (e.g., example.com)">
+                <button class="add-btn" id="addSiteBtn">Add</button>
+            </div>
+
+            <div class="site-list" id="siteList">
+                <!-- Site items will be added here dynamically -->
+            </div>
+        </div>
+
+        <button class="save-btn" id="saveBtn">Apply Settings</button>
+        <div class="status-message" id="statusMessage" style="display: none;">Settings applied instantly!</div>
+    </div>
+
+    <div class="footer">
+        <p style="color: #ffffff;">Developed by Ebrahim Shafiei (EbraSha)</p>
+        <p style="color: #ffffff;">Prof.Shafiei@Gmail.com</p>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html> 

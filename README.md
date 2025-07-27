@@ -35,25 +35,21 @@ A powerful Firefox extension designed to bypass website restrictions and limitat
 
 ## 🚀 Installation
 
-## 📺 Installation Tutorial
 
-[![Watch the video](installation/install.mp4)
+Installing **Abdal FoxyByPass** from the official Firefox Add-ons Store is simple and secure. Just follow these steps:
+
+1. Open the link below in your Firefox browser:  
+   👉 [https://addons.mozilla.org/en-US/firefox/addon/abdal-foxybypass/](https://addons.mozilla.org/en-US/firefox/addon/abdal-foxybypass/)
+
+2. Click the **"Add to Firefox"** button.
+
+3. In the popup dialog, click **"Add"** to confirm installation.
+
+4. That’s it! The extension is now installed and ready to use.
+
+> ⚠️ You don’t need to download or load any files manually. Always prefer installing from the official store for automatic updates and maximum security.
 
 
-### Method 1: Temporary Installation (Development)
-
-1. Open Firefox and navigate to `about:debugging`
-2. Click "This Firefox" in the left sidebar
-3. Click "Load Temporary Add-on"
-4. Select the `manifest.json` file from this extension folder
-5. The extension will be installed temporarily (until Firefox is restarted)
-
-### Method 2: Permanent Installation
-
-1. Open Firefox and navigate to `about:addons`
-2. Click the gear icon and select "Install Add-on From File"
-3. Select the `manifest.json` file from this extension folder
-4. Click "Add" to install the extension permanently
 
 ## 📖 Usage
 

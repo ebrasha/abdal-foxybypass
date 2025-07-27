@@ -35,6 +35,11 @@ A powerful Firefox extension designed to bypass website restrictions and limitat
 
 ## 🚀 Installation
 
+## 📺 Installation Tutorial
+
+[![Watch the video](installation/install.mp4)
+
+
 ### Method 1: Temporary Installation (Development)
 
 1. Open Firefox and navigate to `about:debugging`

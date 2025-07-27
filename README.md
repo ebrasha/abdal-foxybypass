@@ -131,24 +131,7 @@ The extension uses various techniques to bypass restrictions:
 2. Reduce the number of sites in your list
 3. Restart Firefox if issues persist
 
-## 📁 Project Structure
 
-```
-Abdal FoxyByPass/
-├── manifest.json          # Extension manifest
-├── background.js          # Background script
-├── content.js            # Content script for bypass rules
-├── popup.html            # Settings UI
-├── popup.js              # Popup functionality
-├── icons/                # Extension icons
-│   ├── icon16.png        # 16x16 icon
-│   ├── icon32.png        # 32x32 icon
-│   ├── icon48.png        # 48x48 icon
-│   ├── icon96.png        # 96x96 icon
-│   └── icon128.png       # 128x128 icon
-├── README.md             # This file
-└── README.fa.md          # Persian documentation
-```
 
 ## 🏗️ Development
 
